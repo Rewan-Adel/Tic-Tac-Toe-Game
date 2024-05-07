@@ -41,8 +41,6 @@ public class TicTacToe {
         boardPanel.setLayout(new GridLayout(3, 3));
         boardPanel.setBackground(Color.pink);
         frame.add(boardPanel);
-
-    
     }
 
 }
