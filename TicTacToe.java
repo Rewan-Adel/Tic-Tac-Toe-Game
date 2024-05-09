@@ -43,4 +43,21 @@ public class TicTacToe {
         frame.add(boardPanel);
     }
 
+    void setWinner(JButton tile) {
+        textLabel.setText(currentPlayer + " is the winner!");
+        
+        ImageIcon imageIcon = new ImageIcon("./image//congrats-lets-celebrate.jpg");
+        tile.setIcon(imageIcon);    
+    
+        Image image = imageIcon.getImage();
+    
+        JPanel panel = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+            }
+        };
+    }
+
 }
