@@ -40,7 +40,6 @@ public class TicTacToe {
         this.serverAddress = serverAddress;
         this.serverPort = serverPort;
 
-       // play();
         connectToServer();
     }
     
