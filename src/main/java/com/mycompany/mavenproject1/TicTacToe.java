@@ -40,9 +40,40 @@ public class TicTacToe {
         this.serverAddress = serverAddress;
         this.serverPort = serverPort;
 
+        play();
         connectToServer();
     }
     
+    void play(){
+        frame.setVisible(true);
+        frame.setSize(boardWidth, boardHeight);
+        frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(new BorderLayout());
+
+        textLabel.setBackground(Color.pink);
+        textLabel.setForeground(Color.white);
+        textLabel.setFont(new Font("Arial", Font.BOLD, 50));
+        textLabel.setHorizontalAlignment(JLabel.CENTER);
+        textLabel.setText("Tic-Tac-Toe");
+        textLabel.setOpaque(true);
+
+        textPanel.setLayout(new BorderLayout());
+        textPanel.add(textLabel);
+        frame.add(textPanel, BorderLayout.NORTH);
+
+        boardPanel.setLayout(new GridLayout(3, 3));
+        boardPanel.setBackground(Color.pink);
+        frame.add(boardPanel);
+
+       
+   
+    }
+
+
+
+
     private void connectToServer() {
         try {
             socket = new Socket();
