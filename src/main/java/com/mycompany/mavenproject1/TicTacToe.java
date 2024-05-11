@@ -198,6 +198,7 @@ void checkWinner() {
                 g.drawImage(image, 0, 0, getWidth(), getHeight(), this); 
             } 
         }; 
+
  
         frame.setContentPane(panel); 
         frame.revalidate(); 
