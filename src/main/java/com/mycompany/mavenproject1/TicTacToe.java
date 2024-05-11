@@ -67,7 +67,37 @@ public class TicTacToe {
         boardPanel.setBackground(Color.pink);
         frame.add(boardPanel);
 
-       
+       for (int r = 0; r < 3; r++) {
+            for (int c = 0; c < 3; c++) {
+                JButton tile = new JButton();
+                board[r][c] = tile;
+                boardPanel.add(tile);
+
+                tile.setBackground(Color.pink);
+                tile.setForeground(Color.white);
+                tile.setFont(new Font("Arial", Font.BOLD, 120));
+                tile.setFocusable(false);
+                
+
+                tile.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        if (gameOver) return;
+                        JButton tile = (JButton) e.getSource();
+                        if (tile.getText() == "") {
+                            tile.setText(currentPlayer);
+                            turns++;
+                           // checkWinner();
+                            if (!gameOver) {
+                                currentPlayer = currentPlayer == playerX ? playerO : playerX;
+                                textLabel.setText(currentPlayer + "'s turn.");
+                            }
+                        }
+
+                    }
+                });
+            }
+         
+        }
    
     }
 
