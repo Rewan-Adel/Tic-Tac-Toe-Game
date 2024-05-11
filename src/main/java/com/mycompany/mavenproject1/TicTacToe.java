@@ -119,7 +119,7 @@ public class TicTacToe {
     }
 
 
-}
+
 
 void checkWinner() { 
         //horizontal 
@@ -186,7 +186,7 @@ void checkWinner() {
     void setWinner(JButton tile) { 
         textLabel.setText(currentPlayer + " is the winner!"); 
          
-        ImageIcon imageIcon = new ImageIcon("D://tic-tac-toe//image//winner.jpg"); 
+        ImageIcon imageIcon = new ImageIcon("image//winner.jpg"); 
         tile.setIcon(imageIcon);     
      
         Image image = imageIcon.getImage(); 
